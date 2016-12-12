@@ -39,7 +39,7 @@ public class AutorizacaoController {
 	}
 	
 	@RequestMapping(value = "/autorizacao/getAll")
-	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Collection<Autorizacao>> getAll(HttpServletResponse response) {
 		return new ResponseEntity<Collection<Autorizacao>>(autorizacaoService.todos(), HttpStatus.OK);
 	}
